@@ -1,0 +1,20 @@
+HOW TO USE THE SCRIPT FOR GP DATA ANALYSIS
+
+How to load the plate:
+1) Load the replicates next to each other: for example, one triplicate has to go from A1 to A3. The script also works if you have replicates > 3. 
+2) The second set of different dilutions has to start from A4 and being a triplicate, it will occupy A4, A5, A6. 
+3)The same goes for other samples/dilutions. So load the plate from left to right and start a new row when all the wells are occupied. If replicates get split on different rows it is not a problem.
+
+
+How to import the data:
+The only thing you have to on the excel file, is to do delete the first empty column. Then the first row will be the header, in which the first column will be the time and the other columns will be the wells (A1, A2, … A12, B1, B2, … B12, etc). 
+
+
+What it does:
+1) Plot each replicate in the same plot – to check if there are outliers. Outliers can be removed from the excel file, but leave the column as the script counts adjacent columns to group the replicates
+2) Makes average and SD for each replicate
+3) Assign names to each sample and then split them by strain and condition (step necessary to facet wrap later when plotting)
+4) Plot the average and standard deviation of the samples. 
+5) Calculate the end of the lag phase (as time at which the cultures reach a specific threshold OD – it’s an approximation). You can modify the OD after which you consider the lag phase over.
+6) Calculate the maximum OD reached by the culture
+7) Calculate the growth rate with the package “growthrates”. See documentation here.
