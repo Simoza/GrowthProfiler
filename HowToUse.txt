@@ -1,16 +1,15 @@
-HOW TO USE THE SCRIPT FOR GP DATA ANALYSIS
+HOW TO USE THE SCRIPT FOR GROWTH PROFILER DATA ANALYSIS
 
 How to load the plate:
-1) Load the replicates next to each other: for example, one triplicate has to go from A1 to A3. The script also works if you have replicates > 3. 
-2) The second set of different dilutions has to start from A4 and being a triplicate, it will occupy A4, A5, A6. 
+1) Load the replicates next to each other: for example, if you have triplicates, one triplicate has to go from A1 to A3. 
+2) The second set of samples has to start from A4 and being a triplicate, it will occupy A4, A5, A6.
 3)The same goes for other samples/dilutions. So load the plate from left to right and start a new row when all the wells are occupied. If replicates get split on different rows it is not a problem.
+The script also works if you have replicates more than triplicates. 
 
+How the data should look like before import:
+A csv file containing in the first column the timepoints values, and in each other other column the OD measurement for each well. There is no need to add manually the column headers (time, A1, A2, ...) as the script will do that in the first steps. 
 
-How to import the data:
-The only thing you have to on the excel file, is to do delete the first empty column. Then the first row will be the header, in which the first column will be the time and the other columns will be the wells (A1, A2, … A12, B1, B2, … B12, etc). 
-
-
-What it does:
+What the script does:
 1) Plot each replicate in the same plot – to check if there are outliers. Outliers can be removed from the excel file, but leave the column as the script counts adjacent columns to group the replicates
 2) Makes average and SD for each replicate
 3) Assign names to each sample and then split them by strain and condition (step necessary to facet wrap later when plotting)
